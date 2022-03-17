@@ -20,7 +20,7 @@ public class Bluejay: NSObject { //swiftlint:disable:this type_body_length
     // MARK: - Private Properties
 
     /// Internal reference to CoreBluetooth's CBCentralManager.
-    private var cbCentralManager: CBCentralManager!
+    public var cbCentralManager: CBCentralManager!
 
     /// Contains the operations to execute in FIFO order.
     private var queue: Queue!
