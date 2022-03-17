@@ -306,6 +306,14 @@ public class Bluejay: NSObject { //swiftlint:disable:this type_body_length
 
         return (manager: cbCentralManager, peripheral: connectedPeripheral?.cbPeripheral)
     }
+    
+    public func retrievePeripheral(_ peripheralUuid: UUID) -> CBPeripheral? {
+        if let cbPeripheral = cbCentralManager.retrievePeripherals(withIdentifiers: [peripheralUuid]).first {
+            return cbPeripheral
+        } else {
+            return nil
+        }
+    }
 
     /// Check to see whether the "Uses Bluetooth LE accessories" capability is turned on in the residing Xcode project.
     private func checkBackgroundSupportForBluetooth() {
